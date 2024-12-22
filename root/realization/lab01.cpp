@@ -1,6 +1,6 @@
 #include "lab01.h"
 namespace lab01 {
-	/*1 Инициализация нулями вектора с n компонентами*/
+	
     DATE::DATE(unsigned dd, month mm, unsigned yy) {
         if (Valid(dd, mm, yy)) {
             day = dd;
