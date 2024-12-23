@@ -1,18 +1,18 @@
 #include "lab03.h"
 namespace lab03 {
-    // Êîíñòğóêòîğ ñ ïàğàìåòğîì ğàçìåğà, èíèöèàëèçèğóåò ìàññèâ èëè óñòàíàâëèâàåò nullptr
+    
     UniqueNumbers::UniqueNumbers(int size) : numbers(size > 0 ? new int[size] : nullptr), N(size) {}
-    // Äåñòğóêòîğ îñâîáîæäàåò ïàìÿòü
+    
     UniqueNumbers::~UniqueNumbers() {
         delete[] numbers;
     }
-    // Óñòàíàâëèâàåò ÷èñëî ïî èíäåêñó, åñëè èíäåêñ âàëèäåí
+    // Ã“Ã±Ã²Ã Ã­Ã Ã¢Ã«Ã¨Ã¢Ã Ã¥Ã² Ã·Ã¨Ã±Ã«Ã® Ã¯Ã® Ã¨Ã­Ã¤Ã¥ÃªÃ±Ã³, Ã¥Ã±Ã«Ã¨ Ã¨Ã­Ã¤Ã¥ÃªÃ± Ã¢Ã Ã«Ã¨Ã¤Ã¥Ã­
     void UniqueNumbers::setNumber(int index, int value) {
         if (index >= 0 && index < N) {
             numbers[index] = value;
         }
     }
-    // Íàõîäèò óíèêàëüíûå ÷èñëà è âîçâğàùàåò èõ êîëè÷åñòâî
+    // ÃÃ ÃµÃ®Ã¤Ã¨Ã² Ã³Ã­Ã¨ÃªÃ Ã«Ã¼Ã­Ã»Ã¥ Ã·Ã¨Ã±Ã«Ã  Ã¨ Ã¢Ã®Ã§Ã¢Ã°Ã Ã¹Ã Ã¥Ã² Ã¨Ãµ ÃªÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã®
     int UniqueNumbers::findUnique(int* uniqueNumbers) const {
         int uniqueCount = 0;
         for (int i = 0; i < N; ++i) {
