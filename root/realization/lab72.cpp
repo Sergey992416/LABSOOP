@@ -1,6 +1,6 @@
 #include "lab72.h"
 #include <sstream>
-#include <iomanip> // Для std::setw, std::setprecision
+#include <iomanip> 
 namespace lab72 {
     Manip::Manip(int w, int b, int p, char f)
         : width(w), base(b), precision(p), fill(f) {}
@@ -22,17 +22,17 @@ namespace lab72 {
         return os;
     }
 
-    // Реализация функции для конвертации числа с плавающей точкой
+    // ГђГҐГ Г«ГЁГ§Г Г¶ГЁГї ГґГіГ­ГЄГ¶ГЁГЁ Г¤Г«Гї ГЄГ®Г­ГўГҐГ°ГІГ Г¶ГЁГЁ Г·ГЁГ±Г«Г  Г± ГЇГ«Г ГўГ ГѕГ№ГҐГ© ГІГ®Г·ГЄГ®Г©
     std::string floatToHex(double num, int precision) {
         int integerPart = static_cast<int>(num);
         double fractionalPart = num - integerPart;
 
-        // Конвертируем целую часть
+        // ГЉГ®Г­ГўГҐГ°ГІГЁГ°ГіГҐГ¬ Г¶ГҐГ«ГіГѕ Г·Г Г±ГІГј
         std::ostringstream integerStream;
         integerStream << std::hex << integerPart;
         std::string integerStr = integerStream.str();
 
-        // Конвертируем дробную часть
+        // ГЉГ®Г­ГўГҐГ°ГІГЁГ°ГіГҐГ¬ Г¤Г°Г®ГЎГ­ГіГѕ Г·Г Г±ГІГј
         std::string fractionalStr;
         double tempFrac = fractionalPart;
         for (int i = 0; i < precision; ++i) {
